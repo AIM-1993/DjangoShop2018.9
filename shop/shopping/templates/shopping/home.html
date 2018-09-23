@@ -1,9 +1,7 @@
 {% extends "shopping/base.html" %}
 {% load static %}
 {% block 主体 %}
-  {% for 每部手机 in 所有商品 %}
-    {{ 每部手机.名称 }}
-    {{ 每部手机.描述 }}
-    {{ 每部手机.图片.url }}
+  {% for cate, cate_product in Cate_info %}
+    <h2>{{ cate.名称 }}</h2>
   {% endfor %}
 {% endblock %}

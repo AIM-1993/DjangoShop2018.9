@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from .models import 产品列表, 商品类别表
+from .models import Product, Category
 # Create your views here.
 
 
 def home(request):
-    content = {'所有商品': 产品列表.objects.all()}
+    Cate_data = Category.objects.all()
+    Cate_info = []
+    for cate in Cate_data:
+        Cate_info.append(category, Product.objects.filter(cate=cate)[:3])
+    content = {'Cate_info': Cate_info}
     return render(request, 'shopping/home.html', content)
