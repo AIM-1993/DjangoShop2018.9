@@ -4,9 +4,9 @@ from .models import Product, Category
 
 
 def home(request):
-    Cate_data = Category.objects.all()
-    Cate_info = []
-    for cate in Cate_data:
-        Cate_info.append(Category, Product.objects.filter(cate=cate)[:3])
-    content = {'Cate_info': Cate_info}
+    所有类别 = Category.objects.all()
+    Data = []
+    for cate in 所有类别:
+        Data.append((cate, Product.objects.filter(所属类别=cate)[:3]))
+    content = {'Data': Data}
     return render(request, 'shopping/home.html', content)

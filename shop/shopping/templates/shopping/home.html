@@ -1,18 +1,16 @@
 {% extends "shopping/base.html" %}
 {% load static %}
+
 {% block 主体 %}
-  {% for cate,cate_product in Cate_info %}
-    <h2>{{ cate.名称 }}</h2>
-    <img src="{{ cate.图片.url }}" alt="{{ cate.名称 }}">
 
-    { % for product in cate_product % }
-      <h3>{{ cate.名称 }}</h3>
-      <p>{{ cate.描述 }}</p>
-      <br>
-      <img src="{{ cate.图片.url }}" alt="{{ cate.名称 }}">
-      <br>
-      <h4>{{ cate.价格 }}</h4>
-      <br>
-    {% endfor %}
+  {% for cate, 该类商品 in Data %}
+    <h3>{{ cate.名称 }}</h3>
+    <p>{{ cate.描述 }}</p>
+      {% for 每件商品 in 该类商品 %}
+        <h3>{{ 每件商品.名称 }}</h3>
+        <p>{{ 每件商品.描述 }}</p><br>
+        <p>{{ 每件商品.价格 }}</p><br>
+      {% endfor %}
+  {% endfor %}
 
-{% endblock %}
+{% endblock 主体%}

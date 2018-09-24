@@ -9,12 +9,11 @@
   <title>{% block title %}网站标题{% endblock %}</title>
 </head>
 <body>
-    {% include "shopping/header.html" %}
-    {% include "shopping/nav.html" %}
-    <main>
-      {% block 主体 %}
-      {% endblock %}
-    </main>
-    {% include "shopping/footer.html" %}
+  {% include "shopping/header.html" %}
+  {% include "shopping/nav.html" %}
+  <div>
+    {% block 主体 %}noname{% endblock 主体 %}
+  </div>
+  {% include "shopping/footer.html" %}
 </body>
 </html>

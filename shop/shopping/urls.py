@@ -3,6 +3,6 @@ from . import views
 
 app_name = "shopping"
 urlpatterns = [
-    path('home/', views.home, name="主页"),
+    path('', views.home, name="home"),
 
 ]
